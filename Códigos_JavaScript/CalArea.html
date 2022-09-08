@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Area</title>
+    <script>
+        var forma;
+        var formaLower;
+        var erro;
+        var area;
+        do{
+            erro = false;
+            alert("Formas geométricas: Triângulo, Retângulo, Losango e Trapézio.");
+            forma = prompt("Digite a forma que deseja calcular:"); 
+            forma = forma.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            formaLower= forma.toLowerCase();
+            forma = forma.toUpperCase();
+            if(forma=="TRIANGULO"){
+                let base;
+                let altura;
+                base = prompt("Digite o tamanho da base:");
+                altura = prompt("Digite o altura do "+formaLower+": ");
+                area = base*altura/2; 
+            }else if(forma=="RETANGULO"){
+                let base;
+                let altura;
+                base = prompt("Digite o tamanho da base:");
+                altura = prompt("Digite o altura da "+formaLower+": ");
+                area = base*altura; 
+            }else if(forma=="LOSANGO"){
+                let baseMenor;
+                let baseMaior;
+                let altura;
+                baseMenor = prompt("Digite o tamanho da base menor:");
+                baseMaior = prompt("Digite o tamanho da base maior:");
+                altura = prompt("Digite o altura da "+formaLower+": ");
+                area = (baseMenor+baseMaior)*altura/2;
+            }else if(forma=="TRAPEZIO"){
+                let diagonalMenor;
+                let diagonalMaior;
+                let altura;
+                diagonalMenor = prompt("Digite o tamanho da diagonal menor:");
+                diagonalMaior = prompt("Digite o tamanho da diagonal maior:");
+                area = diagonalMaior*diagonalMenor/2;
+            }else{
+                alert("Forma invalida!");
+                erro = true;
+            }
+        }while(erro);
+            confirm("A area do "+formaLower+" é: "+area);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
